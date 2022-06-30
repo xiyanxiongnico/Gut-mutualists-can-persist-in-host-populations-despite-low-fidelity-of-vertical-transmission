@@ -67,6 +67,13 @@ p1.lines[3].set_linestyle("-.")
 p2.lines[2].set_linestyle("-.")
 p2.lines[3].set_linestyle("-.")
 
+p1.lines[0].set_color("firebrick")
+p1.lines[1].set_color("seagreen")
+p1.lines[2].set_color('mediumaquamarine')
+p2.lines[0].set_color("firebrick")
+p2.lines[1].set_color("seagreen")
+p2.lines[2].set_color('mediumaquamarine')
+
 # x, y labels
 p1.set_ylabel('Proportion', fontsize=13)
 p1.set_xlabel('Generation', fontsize=13)
@@ -87,7 +94,7 @@ p2.grid(axis='both',color='black', linestyle='-', lw=0.5, alpha=0.2)
 
 # legend properties
 # Create the legend
-lgd = fig.legend(labels=['$N$','$M$','$E_m$','$E_x$'],   # The labels for each line
+lgd = fig.legend(labels=['$N$','$M$','$E_m$','$E_o$'],   # The labels for each line
            loc="right",   # Position of legend
            frameon = 0.5, framealpha=0.8,
            borderaxespad=-0.5,    # Small spacing around legend box

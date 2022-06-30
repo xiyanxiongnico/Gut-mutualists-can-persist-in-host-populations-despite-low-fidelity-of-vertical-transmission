@@ -28,7 +28,7 @@ from FunctionSimpleModel_getEquilibria import get_equilibrium
 df_lambda = pd.DataFrame()
 
 # make a list of lambda values
-lamda = np.arange(0, 0.41, 0.01).tolist()
+lamda = np.arange(0, 0.41, 0.005).tolist()
 
 for lambda_value in lamda:
     # compute corresponding equillibria values i
@@ -88,8 +88,8 @@ plt.ylabel('Proportion at equilibria', fontsize=8) # Add the y axis label
 
 # x,y ticks and grid
 plt.tick_params(axis='both', labelsize=8) # Change the parameters for the x and y axis
-plt.grid(True) # Display the grid lines
-plt.grid(axis='both',color='black', linestyle='-', lw=0.5, alpha=0.15) # Change the grid parameters
+#plt.grid(True) # Display the grid lines
+#plt.grid(axis='both',color='black', linestyle='-', lw=0.5, alpha=0.15) # Change the grid parameters
 
 
 # legend properties
