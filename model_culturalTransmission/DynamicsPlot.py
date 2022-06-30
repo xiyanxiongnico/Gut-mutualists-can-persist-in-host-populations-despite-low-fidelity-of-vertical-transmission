@@ -34,7 +34,7 @@ fig.suptitle(mytitle, fontsize=13, x=0.5, y=0.95)
 sns.set_palette("Set2")
 
 # a list of colomns for y-axes
-y_s = ['M_y','N_y','M_x','N_x','E_m','E_x']
+y_s = ['M_y','M_x','N_y','N_x','E_m','E_x']
 
 
 # go through p1 p2 p3 p4 as y-axes to make subplot1 
@@ -55,10 +55,30 @@ for p in y_s:
                  )
 
 # set a different line style for Em and Ex
-p1.lines[2].set_linestyle("-.")
-p1.lines[3].set_linestyle("-.")
-p2.lines[2].set_linestyle("-.")
-p2.lines[3].set_linestyle("-.")
+p1.lines[1].set_linestyle("--")
+p1.lines[3].set_linestyle("--")
+p2.lines[1].set_linestyle("--")
+p2.lines[3].set_linestyle("--")
+p1.lines[4].set_linestyle("-.")
+p1.lines[5].set_linestyle("-.")
+p2.lines[4].set_linestyle("-.")
+p2.lines[5].set_linestyle("-.")
+
+
+p1.lines[0].set_color("seagreen")
+p1.lines[1].set_color("seagreen")
+p1.lines[2].set_color("firebrick")
+p1.lines[3].set_color("firebrick")
+p1.lines[4].set_color("mediumaquamarine")
+p1.lines[5].set_color("orchid")
+
+p2.lines[0].set_color("seagreen")
+p2.lines[1].set_color("seagreen")
+p2.lines[2].set_color("firebrick")
+p2.lines[3].set_color("firebrick")
+p2.lines[4].set_color("mediumaquamarine")
+p2.lines[5].set_color("orchid")
+
 
 # x, y labels
 p1.set_ylabel('Proportion', fontsize=13)
@@ -81,7 +101,7 @@ p2.grid(axis='both',color='black', linestyle='-', lw=0.5, alpha=0.2)
 
 # Create the legend
 # legend properties
-lgd = fig.legend(labels=['$M_y$','$N_y$','$M_x$','$N_x$','$E_m$','$E_x$'],   # The labels for each line
+lgd = fig.legend(labels=['$M_y$','$M_x$', '$N_y$','$N_x$','$E_m$','$E_o$'],   # The labels for each line
            loc="right",   # Position of legend
            frameon = 0.5, framealpha=0.8,
            borderaxespad=-0.5,    # Small spacing around legend box

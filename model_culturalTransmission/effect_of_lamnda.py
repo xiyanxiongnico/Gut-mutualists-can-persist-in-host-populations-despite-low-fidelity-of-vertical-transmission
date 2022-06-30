@@ -55,7 +55,8 @@ palette = sns.color_palette("Set2")
 sns.set_palette(palette)
 
 # a list of colomns for y-axes
-y_s = ['M_y','N_y','M_x','N_x','E_m','E_x']
+#y_s = ['M_y','N_y','M_x','N_x','E_m','E_x']
+y_s = ['M_y','M_x','N_y','N_x','E_m','E_x']
 
 # extract threshold value 
 threshold = df_lambda.iloc[0]['threshold']
@@ -68,15 +69,17 @@ for p in y_s:
                  )
 
 # set a different line style and color for each variable
+
+ax.lines[1].set_linestyle("--")
+ax.lines[3].set_linestyle("--")
 ax.lines[4].set_linestyle("-.")
 ax.lines[5].set_linestyle("-.")
-ax.lines[0].set_linestyle("--")
-ax.lines[2].set_linestyle("--")
-ax.lines[0].set_color("coral")
+
+ax.lines[0].set_color("seagreen")
+ax.lines[1].set_color("seagreen")
 ax.lines[2].set_color("firebrick")
-ax.lines[1].set_color("mediumaquamarine")
-ax.lines[3].set_color("seagreen")
-ax.lines[4].set_color("steelblue")
+ax.lines[3].set_color("firebrick")
+ax.lines[4].set_color("mediumaquamarine")
 ax.lines[5].set_color("orchid")
 
 
@@ -91,13 +94,13 @@ plt.ylabel('Proportion at equilibria', fontsize=8) # Add the y axis label
 
 # x,y ticks and grid
 plt.tick_params(axis='both', labelsize=8) # Change the parameters for the x and y axis
-plt.grid(True) # Display the grid lines
-plt.grid(axis='both',color='black', linestyle='-', lw=0.5, alpha=0.15) # Change the grid parameters
+#plt.grid(True) # Display the grid lines
+#plt.grid(axis='both',color='black', linestyle='-', lw=0.5, alpha=0.15) # Change the grid parameters
 
 ax.text(0.2,1.05, "$Threshold$", size=8, color= 'black')
 
 # legend properties
-lgd = plt.legend(labels=['$M_y$','$N_y$','$M_x$','$N_x$','$E_m$','$E_x$'], loc="right",frameon = 0.5, 
+lgd = plt.legend(labels=['$M_y$','$M_x$','$N_y$','$N_x$','$E_m$','$E_o$'], loc="right",frameon = 0.5, 
                  framealpha=0.8, # Create a legend and define its location
            edgecolor='white', facecolor='white', ncol=1, # Edgecolor, facecolor and the number of columns
            title='', fontsize=8) # the title and the font size
